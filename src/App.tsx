@@ -3,7 +3,7 @@ import SearchItem from './search.svg';
 import './App.css';
 import MovieCard from './components/MovieCard';
 
-const API_URL = `http://www.omdbapi.com?apikey=${process.env.API_KEY}`;
+const API_URL = `http://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const movieSample = {
   Title: "Spiderman in Cannes",
@@ -20,8 +20,7 @@ const App = () => {
     console.log(response.Search);
   }
   useEffect(() => {
-     searchMovies('spiderman')
-    console.log('page rendered ...')
+     searchMovies('spiderman');
   },[])
   return (
     <div className="app">
