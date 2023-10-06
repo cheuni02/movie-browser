@@ -1,3 +1,7 @@
+# Movie Browser Web App
+
+search on IMDB any movies served from their imdbapi
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

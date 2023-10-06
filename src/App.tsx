@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import SearchItem from './search.svg';
 import './App.css';
+import MovieCard from './components/MovieCard';
 
-function App() {
+// const API_KEY = 75255310; 
+const API_URL = `http://www.omdbapi.com?apikey=${process.env.API_KEY}`;
+
+const movieSample = {
+  Title: "Spiderman in Cannes",
+  Year: "2016",
+  imdbID: "tt5978586",
+  Type: "movie",
+  Poster:
+    "https://m.media-amazon.com/images/M/MV5BZDlmMGQwYmItNTNmOS00OTNkLTkxNTYtNDM3ZWVlMWUyZDIzXkEyXkFqcGdeQXVyMTA5Mzk5Mw@@._V1_SX300.jpg",
+};
+
+const App = () => {
+  const searchMovies = async (searchItem: string) => {
+    const response = await (await fetch(`${API_URL}&s=${searchItem}`)).json();
+    console.log(response.Search);
+  }
+  useEffect(() => {
+     searchMovies('spiderman')
+    console.log('page rendered ...')
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Movie Browser</h1>
+      <div className="search">
+        <input
+          placeholder="Search for movies"
+          value="Superman"
+          onChange={() => {}}
+        />
+        <img src={SearchItem} alt="search" onClick={() => {}} />
+      </div>
+      <div className="container">
+        <MovieCard movie={movieSample} />
+      </div>
     </div>
   );
 }
