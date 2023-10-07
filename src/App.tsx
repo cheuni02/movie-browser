@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import SearchItem from './search.svg';
 import './App.css';
 import MovieCard from './components/MovieCard';
+import { config } from "dotenv";
+// Load environment variables from .env
+config();
 
 const API_URL = `http://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
 
@@ -20,7 +23,8 @@ const App = () => {
     console.log(response.Search);
   }
   useEffect(() => {
-     searchMovies('spiderman');
+    //  searchMovies('spiderman');
+     console.log(`env: ${process.env.API_KEY}`);
   },[])
   return (
     <div className="app">
