@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import SearchItem from "./search.svg";
 import "./App.css";
 import MovieCard from "./components/MovieCard";
-import { config } from "dotenv";
-// Load environment variables from .env
-config();
+
 
 const API_URL = `http://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
 
