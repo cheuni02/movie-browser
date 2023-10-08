@@ -7,7 +7,7 @@ type Movie = {
 };
 
 type Props = {
-    movie: Movie;
+  movie: Movie;
 }
 
 const MovieCard = ({ movie }: Props) => {
