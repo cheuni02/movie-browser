@@ -12,7 +12,6 @@ type Props = {
 
 const MovieCard = ({ movie }: Props) => {
   return (
-    // <h1>Pretty</h1>
     <div className="movie">
       <div>
         <p>{movie.Year}</p>
