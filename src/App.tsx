@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import SearchItem from './search.svg';
-import './App.css';
-import MovieCard from './components/MovieCard';
+import React, { useEffect } from "react";
+import SearchItem from "./search.svg";
+import "./App.css";
+import MovieCard from "./components/MovieCard";
 import { config } from "dotenv";
 // Load environment variables from .env
 config();
@@ -21,11 +21,11 @@ const App = () => {
   const searchMovies = async (searchItem: string) => {
     const response = await (await fetch(`${API_URL}&s=${searchItem}`)).json();
     console.log(response.Search);
-  }
+  };
   useEffect(() => {
     //  searchMovies('spiderman');
-     console.log(`env: ${process.env.API_KEY}`);
-  },[])
+    console.log(`env: ${process.env.API_KEY}`);
+  }, []);
   return (
     <div className="app">
       <h1>Movie Browser</h1>
@@ -42,6 +42,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
