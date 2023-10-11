@@ -33,7 +33,7 @@ const App = () => {
           placeholder="Search for movies"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyPress={(e) => {
+          onKeyDown={(e) => {
             if(e.key === 'Enter') {
               searchMovies(searchTerm);
             }
