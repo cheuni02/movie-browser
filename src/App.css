@@ -97,6 +97,7 @@ h1 {
 }
 
 .empty h2 {
+  display: block;
   font-size: 1.25rem;
   color: #f9d3b4;
   font-family: var(--font-raleway);
