@@ -1,6 +1,6 @@
 # Movie Browser Web App
 
-search on IMDB any movies served from their imdbapi
+Basic UI search on IMDB any movies served from their imdbapi
 
 # Getting Started with Create React App
 
